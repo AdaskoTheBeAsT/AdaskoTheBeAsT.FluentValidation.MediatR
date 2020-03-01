@@ -42,7 +42,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             // Act
 #pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable SA1115 // Parameter should follow comma
-            Func<Task> func = async () => _ = await _sut.Handle(
+            Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
 
@@ -119,7 +119,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             RequestHandlerDelegate<SampleResponse> next = () => Task.FromResult(new SampleResponse { Result = "ok" });
 
             // Act
-            Func<Task> func = async () => _ = await _sut.Handle(
+            Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
                 next);
