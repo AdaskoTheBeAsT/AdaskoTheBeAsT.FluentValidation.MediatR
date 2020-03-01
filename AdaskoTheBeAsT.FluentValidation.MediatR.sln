@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{A84C1269-03CF-4BCA-A79E-8444E61DC7C8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		AdaskoTheBeAsT.FluentValidation.MediatR.sln.DotSettings = AdaskoTheBeAsT.FluentValidation.MediatR.sln.DotSettings
+		AdaskoTheBeAsT.ruleset = AdaskoTheBeAsT.ruleset
+		azure-pipelines.yml = azure-pipelines.yml
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+		SecurityCodeScan.config.yml = SecurityCodeScan.config.yml
+		Settings.StyleCop = Settings.StyleCop
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E3A6570D-511E-464B-AE2D-D552D8D371F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{04FEF2E8-4DBD-4E2F-942B-0C4E4E210454}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{BB2B46F9-942F-488A-9840-25DE52EA79B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaskoTheBeAsT.FluentValidation.MediatR", "src\AdaskoTheBeAsT.FluentValidation.MediatR\AdaskoTheBeAsT.FluentValidation.MediatR.csproj", "{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaskoTheBeAsT.FluentValidation.MediatR.Test", "test\unit\AdaskoTheBeAsT.FluentValidation.MediatR.Test\AdaskoTheBeAsT.FluentValidation.MediatR.Test.csproj", "{F352D7CE-65C4-4C90-8DDD-D2AB633A09E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{B337E00C-A066-4FA8-8EA9-EE37DE7FB23E}"
+	ProjectSection(SolutionItems) = preProject
+		test\AdditionalTestSettings.cs = test\AdditionalTestSettings.cs
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F352D7CE-65C4-4C90-8DDD-D2AB633A09E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F352D7CE-65C4-4C90-8DDD-D2AB633A09E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F352D7CE-65C4-4C90-8DDD-D2AB633A09E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F352D7CE-65C4-4C90-8DDD-D2AB633A09E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB2B46F9-942F-488A-9840-25DE52EA79B8} = {04FEF2E8-4DBD-4E2F-942B-0C4E4E210454}
+		{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37} = {E3A6570D-511E-464B-AE2D-D552D8D371F8}
+		{F352D7CE-65C4-4C90-8DDD-D2AB633A09E9} = {BB2B46F9-942F-488A-9840-25DE52EA79B8}
+		{B337E00C-A066-4FA8-8EA9-EE37DE7FB23E} = {04FEF2E8-4DBD-4E2F-942B-0C4E4E210454}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D08C4B64-5C79-4425-9180-4615B2AE1B08}
+	EndGlobalSection
+EndGlobal
