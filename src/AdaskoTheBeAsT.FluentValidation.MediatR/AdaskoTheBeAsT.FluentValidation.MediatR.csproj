@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
-    <ProjectGuid>E38FA227-012D-4A01-A646-0C8099928B10</ProjectGuid>
+    <ProjectGuid>{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}</ProjectGuid>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -10,7 +10,7 @@
     <RepositoryType>github</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Description>FluentValidation extensions for MediatR</Description>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
     <Authors>Adam "AdaskoTheBeAsT" Pluciński</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
