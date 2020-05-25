@@ -66,13 +66,13 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
-            RequestHandlerDelegate<SampleResponse> next = () => Task.FromResult(new SampleResponse { Result = "ok" });
+            static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
 
             // Act
             var result = await _sut.Handle(
                 request,
                 cancellationToken,
-                next);
+                Next);
 
             // Assert
             using (new AssertionScope())
@@ -89,13 +89,13 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
-            RequestHandlerDelegate<SampleResponse> next = () => Task.FromResult(new SampleResponse { Result = "ok" });
+            static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
 
             // Act
             var result = await _sut.Handle(
                 request,
                 cancellationToken,
-                next);
+                Next);
 
             // Assert
             using (new AssertionScope())
@@ -116,13 +116,13 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
-            RequestHandlerDelegate<SampleResponse> next = () => Task.FromResult(new SampleResponse { Result = "ok" });
+            static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
 
             // Act
             Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
-                next);
+                Next);
 
             // Assert
             using (new AssertionScope())
