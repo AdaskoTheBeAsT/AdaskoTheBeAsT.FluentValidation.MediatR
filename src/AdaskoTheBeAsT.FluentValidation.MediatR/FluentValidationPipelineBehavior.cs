@@ -37,7 +37,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
             RequestHandlerDelegate<TResponse> next,
             CancellationToken cancellationToken)
         {
-            var context = new ValidationContext(request);
+            var context = new ValidationContext<TRequest>(request);
             var validationResultTasks = _validators
                 .Select(async v => await v.ValidateAsync(context, cancellationToken));
 
