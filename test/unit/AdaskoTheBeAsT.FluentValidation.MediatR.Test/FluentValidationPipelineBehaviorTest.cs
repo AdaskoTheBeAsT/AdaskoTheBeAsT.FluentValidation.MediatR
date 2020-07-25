@@ -47,7 +47,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
                 cancellationToken,
 
                 // ReSharper disable once ExpressionIsAlwaysNull
-                next);
+                next).ConfigureAwait(false);
 #pragma warning restore SA1115 // Parameter should follow comma
 #pragma warning restore CS8604 // Possible null reference argument.
 
@@ -122,7 +122,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
-                Next);
+                Next).ConfigureAwait(false);
 
             // Assert
             using (new AssertionScope())

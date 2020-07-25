@@ -39,9 +39,9 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
         {
             var context = new ValidationContext<TRequest>(request);
             var validationResultTasks = _validators
-                .Select(async v => await v.ValidateAsync(context, cancellationToken));
+                .Select(async v => await v.ValidateAsync(context, cancellationToken).ConfigureAwait(false));
 
-            var validationResults = await Task.WhenAll(validationResultTasks);
+            var validationResults = await Task.WhenAll(validationResultTasks).ConfigureAwait(false);
 
             var failures = validationResults
                 .SelectMany(result => result.Errors)
@@ -53,7 +53,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
                 throw new ValidationException(failures);
             }
 
-            return await next();
+            return await next().ConfigureAwait(false);
         }
     }
 }
