@@ -13,6 +13,7 @@ FluentValidation behavior for MediatR
 ![Sonar Test Execution Time](https://img.shields.io/sonar/test_execution_time/AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Coverage](https://img.shields.io/sonar/coverage/AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR?server=https%3A%2F%2Fsonarcloud.io&style=plastic)
 ![Nuget](https://img.shields.io/nuget/dt/AdaskoTheBeAsT.FluentValidation.MediatR)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.MediatR.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.MediatR?ref=badge_shield)
 
 ## Usage
 
@@ -34,3 +35,6 @@ It can be used in combination with [AdaskoTheBeAsT.FluentValidation.SimpleInject
             cfg.UsingPipelineProcessorBehaviors(typeof(FluentValidationPipelineBehavior<,>));
         });
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.MediatR.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.MediatR?ref=badge_large)
