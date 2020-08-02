@@ -37,17 +37,19 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
-            RequestHandlerDelegate<SampleResponse>? next = null;
+            const RequestHandlerDelegate<SampleResponse>? next = null;
 
             // Act
 #pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable SA1115 // Parameter should follow comma
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
 
                 // ReSharper disable once ExpressionIsAlwaysNull
                 next).ConfigureAwait(false);
+#pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 #pragma warning restore SA1115 // Parameter should follow comma
 #pragma warning restore CS8604 // Possible null reference argument.
 
@@ -59,7 +61,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         }
 
         [Fact]
-        public async Task ShouldProcessCorrectlyWhenNoValidatorUsed()
+        public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
         {
             // Arrange
             _validators = Enumerable.Empty<IValidator<SampleRequest>>();
@@ -82,7 +84,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         }
 
         [Fact]
-        public async Task ShouldProcessCorrectlyWhenNullValidatorUsed()
+        public async Task ShouldProcessCorrectlyWhenNullValidatorUsedAsync()
         {
             // Arrange
             _validators = new List<IValidator<SampleRequest>> { new NullValidator<SampleRequest>() };

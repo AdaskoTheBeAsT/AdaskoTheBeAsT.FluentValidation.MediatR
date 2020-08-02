@@ -29,10 +29,10 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
                 throw new ArgumentNullException(nameof(next));
             }
 
-            return HandleInternal(request, next, cancellationToken);
+            return HandleInternalAsync(request, next, cancellationToken);
         }
 
-        internal async Task<TResponse> HandleInternal(
+        internal async Task<TResponse> HandleInternalAsync(
             TRequest request,
             RequestHandlerDelegate<TResponse> next,
             CancellationToken cancellationToken)
@@ -53,7 +53,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
                 throw new ValidationException(failures);
             }
 
-            return await next().ConfigureAwait(false);
+            return await next!().ConfigureAwait(false);
         }
     }
 }
