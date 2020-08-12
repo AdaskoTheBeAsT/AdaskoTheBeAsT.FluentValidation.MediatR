@@ -30,6 +30,11 @@ steps:
   inputs:
     packageType: 'sdk'
     useGlobalJson: true
+
+- task: VisualStudioTestPlatformInstaller@1
+  inputs:
+    packageFeedSelector: 'nugetOrg'
+    versionSelector: 'latestStable'
  
 - task: DotNetCoreCLI@2
   displayName: Restore
