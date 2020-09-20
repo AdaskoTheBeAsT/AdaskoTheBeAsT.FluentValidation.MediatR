@@ -50,10 +50,10 @@
     <PackageReference Include="HSR.ParallelChecker" Version="1.6.0" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="IDisposableAnalyzers" Version="3.4.1" >
+    <PackageReference Include="IDisposableAnalyzers" Version="3.4.2" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.561" >
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.566" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0" >
@@ -65,7 +65,7 @@
     <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Roslynator.Analyzers" Version="2.3.0" >
+    <PackageReference Include="Roslynator.Analyzers" Version="3.0.0" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Roslynator.CodeFixes" Version="2.0.0" >
@@ -74,7 +74,7 @@
     <PackageReference Include="SecurityCodeScan" Version="3.5.3" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.12.0.21095" >
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.0.21683" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" >
