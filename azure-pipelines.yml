@@ -46,7 +46,7 @@ steps:
   displayName: 'Prepare analysis on SonarCloud'
   inputs:
     scannerMode: 'MSBuild'    
-    SonarCloud: 'AdaskoTheBeAsT.FluentValidation.MediatR.SonarCloud'
+    SonarCloud: 'Sonar.AdaskoTheBeAsT.FluentValidation.MediatR'
     organization: 'adaskothebeast-github'
     projectKey: 'AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR'
     projectName: AdaskoTheBeAsT.FluentValidation.MediatR
