@@ -5,8 +5,8 @@ FluentValidation behavior for MediatR
 ## Badges
 
 [![Build Status](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.MediatR/_apis/build/status/AdaskoTheBeAsT.AdaskoTheBeAsT.FluentValidation.MediatR?branchName=master)](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.MediatR/_build/latest?definitionId=9&branchName=master)
-![Azure DevOps tests](https://img.shields.io/azure-devops/tests/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/10)
-![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/10?style=plastic)
+![Azure DevOps tests](https://img.shields.io/azure-devops/tests/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/15)
+![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/15?style=plastic)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR&metric=alert_status)](https://sonarcloud.io/dashboard?id=AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR)
 ![Sonar Tests](https://img.shields.io/sonar/tests/AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Test Count](https://img.shields.io/sonar/total_tests/AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR?server=https%3A%2F%2Fsonarcloud.io)
