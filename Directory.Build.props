@@ -4,7 +4,7 @@
   <PropertyGroup>
     <!-- Common ruleset shared by all projects -->
     <CodeAnalysisRuleset>$(MSBuildThisFileDirectory)AdaskoTheBeAsT.ruleset</CodeAnalysisRuleset>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
@@ -13,22 +13,22 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='net461' Or '$(TargetFramework)'=='netstandard2.0' Or '$(TargetFramework)'=='netstandard2.1'">
-    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.7.0" >
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.8.0-3.final" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.7.0" >
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="3.8.0-3.final" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.7.0" >
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0-3.final" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.7.0" >
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.8.0-3.final" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.7.0" >
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.8.0-3.final" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="3.7.0" >
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="3.8.0-3.final" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Puma.Security.Rules" Version="2.4.6" >
@@ -53,7 +53,7 @@
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.2" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.569" >
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.570" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0" >
@@ -78,6 +78,12 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0-rc.1.20451.14" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.Reflection.Metadata" Version="5.0.0-rc.1.20451.14" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 

@@ -40,7 +40,6 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             const RequestHandlerDelegate<SampleResponse>? next = null;
 
             // Act
-#pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable SA1115 // Parameter should follow comma
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
             Func<Task> func = async () => await _sut.Handle(
@@ -51,12 +50,11 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
                 next).ConfigureAwait(false);
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 #pragma warning restore SA1115 // Parameter should follow comma
-#pragma warning restore CS8604 // Possible null reference argument.
 
             // Assert
             using (new AssertionScope())
             {
-                func.Should().Throw<ArgumentNullException>();
+                func.Should().ThrowAsync<ArgumentNullException>();
             }
         }
 
@@ -107,7 +105,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         }
 
         [Fact]
-        public void ShouldReturnErrorsWhenInvalidRequestPassed()
+        public async Task ShouldReturnErrorsWhenInvalidRequestPassedAsync()
         {
             // Arrange
             _validators = new List<IValidator<SampleRequest>>
@@ -129,8 +127,8 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             // Assert
             using (new AssertionScope())
             {
-                var exception = func.Should().Throw<ValidationException>().Which;
-                exception.Errors.Should().HaveCount(2);
+                var exception = await func.Should().ThrowAsync<ValidationException>().ConfigureAwait(false);
+                exception.Which.Errors.Should().HaveCount(2);
             }
         }
     }
