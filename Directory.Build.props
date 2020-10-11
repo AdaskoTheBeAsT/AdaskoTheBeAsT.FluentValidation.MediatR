@@ -53,7 +53,7 @@
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.2" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.569" >
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.570" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0" >
