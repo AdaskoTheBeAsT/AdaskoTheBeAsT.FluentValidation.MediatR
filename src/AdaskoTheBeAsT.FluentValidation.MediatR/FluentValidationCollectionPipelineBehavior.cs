@@ -8,15 +8,15 @@ using MediatR;
 
 namespace AdaskoTheBeAsT.FluentValidation.MediatR
 {
-    public class FluentValidationPipelineBehavior<TRequest, TResponse>
+    public class FluentValidationCollectionPipelineBehavior<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse>
         where TRequest : notnull
     {
-        private readonly IValidator<TRequest>? _validator;
+        private readonly IEnumerable<IValidator<TRequest>> _validators;
 
-        public FluentValidationPipelineBehavior(IValidator<TRequest>? validator)
+        public FluentValidationCollectionPipelineBehavior(IEnumerable<IValidator<TRequest>> validators)
         {
-            _validator = validator;
+            _validators = validators;
         }
 
         public Task<TResponse> Handle(
@@ -37,17 +37,20 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
             RequestHandlerDelegate<TResponse> next,
             CancellationToken cancellationToken)
         {
-            if (_validator != null)
+            var context = new ValidationContext<TRequest>(request);
+            var validationResultTasks = _validators
+                .Select(async v => await v.ValidateAsync(context, cancellationToken).ConfigureAwait(false));
+
+            var validationResults = await Task.WhenAll(validationResultTasks).ConfigureAwait(false);
+
+            var failures = validationResults
+                .SelectMany(result => result.Errors)
+                .Where(f => f != null)
+                .ToList();
+
+            if (failures.Count != 0)
             {
-                var context = new ValidationContext<TRequest>(request);
-                var validationResult = await _validator.ValidateAsync(context, cancellationToken).ConfigureAwait(false);
-
-                var failures = validationResult.Errors.ToList();
-
-                if (failures.Count != 0)
-                {
-                    throw new ValidationException(failures);
-                }
+                throw new ValidationException(failures);
             }
 
             return await next!().ConfigureAwait(false);

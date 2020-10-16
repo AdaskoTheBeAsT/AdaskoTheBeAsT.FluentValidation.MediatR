@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
@@ -10,14 +12,14 @@ using Xunit;
 
 namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
 {
-    public sealed class FluentValidationPipelineBehaviorTest
+    public sealed class FluentValidationCollectionPipelineBehaviorTest
         : IDisposable
     {
         private readonly MockRepository _mockRepository;
-        private FluentValidationPipelineBehavior<SampleRequest, SampleResponse>? _sut;
-        private IValidator<SampleRequest>? _validator;
+        private FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>? _sut;
+        private IEnumerable<IValidator<SampleRequest>>? _validators;
 
-        public FluentValidationPipelineBehaviorTest()
+        public FluentValidationCollectionPipelineBehaviorTest()
         {
             _mockRepository = new MockRepository(MockBehavior.Strict);
         }
@@ -31,7 +33,8 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         public void ShouldThrowExceptionWhenNullAsNextWasPassed()
         {
             // Arrange
-            _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
+            _validators = Enumerable.Empty<IValidator<SampleRequest>>();
+            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
             const RequestHandlerDelegate<SampleResponse>? next = null;
@@ -61,7 +64,8 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
         {
             // Arrange
-            _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(null);
+            _validators = Enumerable.Empty<IValidator<SampleRequest>>();
+            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
             static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
@@ -83,8 +87,8 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         public async Task ShouldProcessCorrectlyWhenNullValidatorUsedAsync()
         {
             // Arrange
-            _validator = new NullValidator<SampleRequest>();
-            _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
+            _validators = new List<IValidator<SampleRequest>> { new NullValidator<SampleRequest>() };
+            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
             static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
@@ -106,8 +110,12 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         public void ShouldReturnErrorsWhenInvalidRequestPassed()
         {
             // Arrange
-            _validator = new SampleRequestIdGreaterThanZeroValidator();
-            _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
+            _validators = new List<IValidator<SampleRequest>>
+            {
+                new SampleRequestIdGreaterThanZeroValidator(),
+                new SampleRequestNameNonEmptyValidator(),
+            };
+            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
             var request = new SampleRequest();
             var cancellationToken = CancellationToken.None;
             static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
@@ -122,7 +130,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             using (new AssertionScope())
             {
                 var exception = func.Should().Throw<ValidationException>().Which;
-                exception.Errors.Should().HaveCount(1);
+                exception.Errors.Should().HaveCount(2);
             }
         }
     }

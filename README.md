@@ -18,12 +18,19 @@ FluentValidation behavior for MediatR
 
 It can be used in combination with [AdaskoTheBeAsT.FluentValidation.SimpleInjector](https://github.com/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.SimpleInjector) [AdaskoTheBeAsT.MediatR.SimpleInjector](https://github.com/AdaskoTheBeAsT/AdaskoTheBeAsT.MediatR.SimpleInjector)
 
+### Validators registered as single
+There should be only one validator per target
+If there is multiple combined validators needed then prepare one which will gather all rules from other
+based  on [Fluent Validation Including Rules](https://docs.fluentvalidation.net/en/latest/including-rules.html)
+and mark all sub validators with attribute SkipValidatorRegistrationAttribute.
+
 ```cs
     container.AddFluentValidation(
         cfg =>
         {
             cfg.WithAssembliesToScan(assemblies);
             cfg.AsScoped();
+            cfg.RegisterAsSingleValidator(); // can be skipped as it is default
         });
 
     container.AddMediatR(
@@ -32,5 +39,25 @@ It can be used in combination with [AdaskoTheBeAsT.FluentValidation.SimpleInject
             cfg.WithAssembliesToScan(assemblies);
             cfg.UsingBuiltinPipelineProcessorBehaviors(true);
             cfg.UsingPipelineProcessorBehaviors(typeof(FluentValidationPipelineBehavior<,>));
+        });
+```
+
+### Validators registered as collection
+
+```cs
+    container.AddFluentValidation(
+        cfg =>
+        {
+            cfg.WithAssembliesToScan(assemblies);
+            cfg.AsScoped();
+            cfg.RegisterAsValidatorCollection();
+        });
+
+    container.AddMediatR(
+        cfg =>
+        {
+            cfg.WithAssembliesToScan(assemblies);
+            cfg.UsingBuiltinPipelineProcessorBehaviors(true);
+            cfg.UsingPipelineProcessorBehaviors(typeof(FluentValidationCollectionPipelineBehavior<,>));
         });
 ```
