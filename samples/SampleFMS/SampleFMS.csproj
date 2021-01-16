@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.MediatR" Version="4.0.0" />
-    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.SimpleInjector" Version="4.0.0" />
-    <PackageReference Include="AdaskoTheBeAsT.MediatR.SimpleInjector" Version="4.0.0" />
+    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.MediatR" Version="4.2.0" />
+    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.SimpleInjector" Version="4.2.0" />
+    <PackageReference Include="AdaskoTheBeAsT.MediatR.SimpleInjector" Version="4.1.1" />
   </ItemGroup>
 
 </Project>
