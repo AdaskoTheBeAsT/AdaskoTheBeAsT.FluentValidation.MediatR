@@ -10,7 +10,7 @@
     <RepositoryType>github</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Description>FluentValidation extensions for MediatR</Description>
-    <PackageVersion>5.1.0</PackageVersion>
+    <PackageVersion>5.2.0</PackageVersion>
     <Authors>Adam "AdaskoTheBeAsT" Pluciński</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
@@ -22,7 +22,7 @@
     <Copyright>Adam "AdaskoTheBeAsT" Pluciński</Copyright>
     <PackageTags>FluentValidation;MediatR</PackageTags>
     <PackageReleaseNotes>
-      - upgraded FluentValidation to v10.0.2
+      - upgraded FluentValidation to v10.2.3
     </PackageReleaseNotes>
   </PropertyGroup>
 
@@ -32,7 +32,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.1.0" />
+    <PackageReference Include="FluentValidation" Version="10.2.3" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
