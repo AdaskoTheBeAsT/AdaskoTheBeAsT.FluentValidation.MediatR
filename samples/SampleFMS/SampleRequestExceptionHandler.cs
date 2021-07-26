@@ -13,6 +13,7 @@ namespace SampleFMS
 #pragma warning disable IDE0060 // Remove unused parameter
 #pragma warning disable RCS1163 // Unused parameter.
 #pragma warning disable CA1801 // Review unused parameters
+#pragma warning disable VSTHRD200 //Use Async suffix for async methods
         public Task Handle(
             SampleRequest request,
             ValidationException exception,
@@ -32,6 +33,7 @@ namespace SampleFMS
             return Task.CompletedTask;
         }
     }
+#pragma warning restore VSTHRD200
 #pragma warning restore CA1801 // Review unused parameters
 #pragma warning restore RCS1163 // Unused parameter.
 #pragma warning restore IDE0060 // Remove unused parameter
