@@ -46,8 +46,6 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
-
-                // ReSharper disable once ExpressionIsAlwaysNull
                 next)
                 .ConfigureAwait(false);
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.

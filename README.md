@@ -4,6 +4,7 @@ FluentValidation behavior for MediatR
 
 ## Badges
 
+[![CodeFactor](https://www.codefactor.io/repository/github/adaskothebeast/adaskothebeast.fluentvalidation.mediatr/badge)](https://www.codefactor.io/repository/github/adaskothebeast/adaskothebeast.fluentvalidation.mediatr)
 [![Build Status](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.MediatR/_apis/build/status/AdaskoTheBeAsT.AdaskoTheBeAsT.FluentValidation.MediatR?branchName=master)](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.MediatR/_build/latest?definitionId=9&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/15)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/15?style=plastic)
