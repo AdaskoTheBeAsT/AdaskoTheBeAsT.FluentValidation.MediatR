@@ -9,14 +9,14 @@ trigger:
 
 pool:
   vmImage: 'windows-2019'
-  
+
 variables:
   buildConfiguration: 'Release'
   unitTestProjects: '**/test/unit/**/*.csproj'
   testResultsDirectory: 'd:/a/1/TestResults'
   MSBUILDSINGLELOADCONTEXT: 1
   disable.coverage.autogenerate: 'true'
-  
+
 steps:
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK 2.1.x'
@@ -31,7 +31,7 @@ steps:
     packageType: 'sdk'
     version: 3.1.x
     installationPath: $(Agent.ToolsDirectory)/dotnet
-  
+
 - task: UseDotNet@2
   displayName: "Use .NET Core SDK from global.json"
   inputs:
@@ -42,17 +42,17 @@ steps:
   inputs:
     packageFeedSelector: 'nugetOrg'
     versionSelector: 'latestStable'
- 
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
     command: restore
     arguments: AdaskoTheBeAsT.FluentValidation.MediatR.sln
-  
+
 - task: SonarCloudPrepare@1
   displayName: 'Prepare analysis on SonarCloud'
   inputs:
-    scannerMode: 'MSBuild'    
+    scannerMode: 'MSBuild'
     SonarCloud: 'Sonar.AdaskoTheBeAsT.FluentValidation.MediatR'
     organization: 'adaskothebeast-github'
     projectKey: 'AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR'
@@ -60,8 +60,7 @@ steps:
     extraProperties: |
       sonar.resharper.cs.reportPath=$(Build.SourcesDirectory)/CodeQualityResults.xml
       sonar.cs.opencover.reportsPaths=$(testResultsDirectory)/coverage.net461.opencover.xml,$(testResultsDirectory)/coverage.netcoreapp3.1.opencover.xml
-    
-  
+
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
@@ -95,7 +94,7 @@ steps:
     solutionOrProjectPath: 'AdaskoTheBeAsT.FluentValidation.MediatR.sln'
     failBuildLevelSelector: 'Warning'
     resultsOutputFilePath: '$(Build.SourcesDirectory)/CodeQualityResults.xml'
-  
+
 - task: SonarCloudAnalyze@1
   displayName: Sonar Cloud analyze
 
