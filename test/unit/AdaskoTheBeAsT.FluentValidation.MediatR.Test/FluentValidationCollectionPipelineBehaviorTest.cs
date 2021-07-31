@@ -48,7 +48,8 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
                 cancellationToken,
 
                 // ReSharper disable once ExpressionIsAlwaysNull
-                next).ConfigureAwait(false);
+                next)
+                .ConfigureAwait(false);
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 #pragma warning restore SA1115 // Parameter should follow comma
 #pragma warning restore CS8604 // Possible null reference argument.

@@ -43,8 +43,8 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
 
             var validationResults = await Task.WhenAll(validationResultTasks).ConfigureAwait(false);
 
-            var failures = validationResults.FirstOrDefault()?
-                .Errors
+            var failures = validationResults.FirstOrDefault()
+                ?.Errors
                 .Where(f => f != null)
                 .ToList();
 
