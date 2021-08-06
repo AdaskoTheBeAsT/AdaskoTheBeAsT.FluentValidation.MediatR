@@ -136,12 +136,6 @@ steps:
       targetFolder: "$(Build.ArtifactStagingDirectory)"
       CleanTargetFolder: true
 
-  - task: DeleteFiles@1
-    displayName: "Clear JetBrains folder"
-    inputs:
-      SourceFolder: "$(Build.ArtifactStagingDirectory)/"
-      Contents: "JetBrains*/*"
-
   - task: PublishBuildArtifacts@1
     inputs:
       pathToPublish: "$(Build.ArtifactStagingDirectory)"
