@@ -49,7 +49,9 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR
                 }
             }
 
-            return await next!().ConfigureAwait(false);
+#pragma warning disable CC0031 // Check for null before calling a delegate
+            return await next().ConfigureAwait(false);
+#pragma warning restore CC0031 // Check for null before calling a delegate
         }
     }
 }
