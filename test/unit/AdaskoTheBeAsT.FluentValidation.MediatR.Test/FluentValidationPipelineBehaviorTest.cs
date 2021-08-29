@@ -28,7 +28,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         }
 
         [Fact]
-        public void ShouldThrowExceptionWhenNullAsNextWasPassed()
+        public async Task ShouldThrowExceptionWhenNullAsNextWasPassedAsync()
         {
             // Arrange
             _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
@@ -52,7 +52,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             // Assert
             using (new AssertionScope())
             {
-                func.Should().Throw<ArgumentNullException>();
+                await func.Should().ThrowAsync<ArgumentNullException>().ConfigureAwait(false);
             }
         }
 
@@ -102,7 +102,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
         }
 
         [Fact]
-        public void ShouldReturnErrorsWhenInvalidRequestPassed()
+        public async Task ShouldReturnErrorsWhenInvalidRequestPassedAsync()
         {
             // Arrange
             _validator = new SampleRequestIdGreaterThanZeroValidator();
@@ -120,7 +120,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
             // Assert
             using (new AssertionScope())
             {
-                var exception = func.Should().Throw<ValidationException>().Which;
+                var exception = (await func.Should().ThrowAsync<ValidationException>().ConfigureAwait(false)).Which;
                 exception.Errors.Should().HaveCount(1);
             }
         }
