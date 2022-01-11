@@ -12,14 +12,14 @@ using Xunit;
 
 namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test;
 
-public sealed class FluentValidationStreamPipelineBehaviorTest
+public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
     : IDisposable
 {
     private readonly MockRepository _mockRepository;
-    private FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>? _sut;
-    private IValidator<SampleStreamRequest>? _validator;
+    private FluentValidationCollectionStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>? _sut;
+    private IEnumerable<IValidator<SampleStreamRequest>>? _validators;
 
-    public FluentValidationStreamPipelineBehaviorTest()
+    public FluentValidationCollectionStreamPipelineBehaviorTest()
     {
         _mockRepository = new MockRepository(MockBehavior.Strict);
     }
@@ -33,7 +33,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
     public async Task ShouldThrowExceptionWhenNullAsNextWasPassedAsync()
     {
         // Arrange
-        _sut = new FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validator);
+        _validators = Enumerable.Empty<IValidator<SampleStreamRequest>>();
+        _sut = new FluentValidationCollectionStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validators);
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         const StreamHandlerDelegate<SampleStreamResponse>? next = null;
@@ -45,10 +46,10 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
         {
             SampleStreamResponse? response = null;
             await foreach (var item in _sut.Handle(
-                    request,
-                    cancellationToken,
-                    next)
-                .ConfigureAwait(false))
+                                   request,
+                                   cancellationToken,
+                                   next)
+                               .ConfigureAwait(false))
             {
                 response = item;
             }
@@ -70,7 +71,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
     public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
     {
         // Arrange
-        _sut = new FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(null);
+        _validators = Enumerable.Empty<IValidator<SampleStreamRequest>>();
+        _sut = new FluentValidationCollectionStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validators);
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };
@@ -104,8 +106,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
     public async Task ShouldProcessCorrectlyWhenNullValidatorUsedAsync()
     {
         // Arrange
-        _validator = new NullValidator<SampleStreamRequest>();
-        _sut = new FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validator);
+        _validators = new List<IValidator<SampleStreamRequest>> { new NullValidator<SampleStreamRequest>() };
+        _sut = new FluentValidationCollectionStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validators);
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };
@@ -139,8 +141,12 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
     public async Task ShouldReturnErrorsWhenInvalidRequestPassedAsync()
     {
         // Arrange
-        _validator = new SampleStreamRequestIdGreaterThanZeroValidator();
-        _sut = new FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validator);
+        _validators = new List<IValidator<SampleStreamRequest>>
+        {
+            new SampleStreamRequestIdGreaterThanZeroValidator(),
+            new SampleStreamRequestNameNonEmptyValidator(),
+        };
+        _sut = new FluentValidationCollectionStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(_validators);
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };
@@ -164,7 +170,7 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
         using (new AssertionScope())
         {
             var exception = (await func.Should().ThrowAsync<ValidationException>().ConfigureAwait(false)).Which;
-            exception.Errors.Should().HaveCount(1);
+            exception.Errors.Should().HaveCount(2);
         }
     }
 }

@@ -41,6 +41,7 @@ and mark all sub validators with attribute SkipValidatorRegistrationAttribute.
             cfg.WithAssembliesToScan(assemblies);
             cfg.UsingBuiltinPipelineProcessorBehaviors(true);
             cfg.UsingPipelineProcessorBehaviors(typeof(FluentValidationPipelineBehavior<,>));
+            cfg.UsingStreamPipelineBehaviors(typeof(FluentValidationStreamPipelineBehavior<,>));
         });
 ```
 
@@ -61,5 +62,6 @@ and mark all sub validators with attribute SkipValidatorRegistrationAttribute.
             cfg.WithAssembliesToScan(assemblies);
             cfg.UsingBuiltinPipelineProcessorBehaviors(true);
             cfg.UsingPipelineProcessorBehaviors(typeof(FluentValidationCollectionPipelineBehavior<,>));
+            cfg.UsingStreamPipelineBehaviors(typeof(FluentValidationCollectionStreamPipelineBehavior<,>));
         });
 ```
