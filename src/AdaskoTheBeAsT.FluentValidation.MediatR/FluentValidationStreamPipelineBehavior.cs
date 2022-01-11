@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
@@ -7,21 +9,21 @@ using MediatR;
 
 namespace AdaskoTheBeAsT.FluentValidation.MediatR;
 
-public class FluentValidationPipelineBehavior<TRequest, TResponse>
-    : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>
+public class FluentValidationStreamPipelineBehavior<TRequest, TResponse>
+    : IStreamPipelineBehavior<TRequest, TResponse>
+    where TRequest : IStreamRequest<TResponse>
 {
     private readonly IValidator<TRequest>? _validator;
 
-    public FluentValidationPipelineBehavior(IValidator<TRequest>? validator)
+    public FluentValidationStreamPipelineBehavior(IValidator<TRequest>? validator)
     {
         _validator = validator;
     }
 
-    public Task<TResponse> Handle(
+    public IAsyncEnumerable<TResponse> Handle(
         TRequest request,
         CancellationToken cancellationToken,
-        RequestHandlerDelegate<TResponse> next)
+        StreamHandlerDelegate<TResponse> next)
     {
         if (next is null)
         {
@@ -31,10 +33,10 @@ public class FluentValidationPipelineBehavior<TRequest, TResponse>
         return HandleInternalAsync(request, next, cancellationToken);
     }
 
-    internal async Task<TResponse> HandleInternalAsync(
+    internal async IAsyncEnumerable<TResponse> HandleInternalAsync(
         TRequest request,
-        RequestHandlerDelegate<TResponse> next,
-        CancellationToken cancellationToken)
+        StreamHandlerDelegate<TResponse> next,
+        [EnumeratorCancellation] CancellationToken cancellationToken)
     {
         if (_validator != null)
         {
@@ -50,7 +52,10 @@ public class FluentValidationPipelineBehavior<TRequest, TResponse>
         }
 
 #pragma warning disable CC0031 // Check for null before calling a delegate
-        return await next().ConfigureAwait(false);
+        await foreach (var result in next().WithCancellation(cancellationToken).ConfigureAwait(false))
+        {
+            yield return result;
+        }
 #pragma warning restore CC0031 // Check for null before calling a delegate
     }
 }

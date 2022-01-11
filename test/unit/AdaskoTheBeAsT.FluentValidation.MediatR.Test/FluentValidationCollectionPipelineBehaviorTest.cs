@@ -10,127 +10,126 @@ using MediatR;
 using Moq;
 using Xunit;
 
-namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test
+namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test;
+
+public sealed class FluentValidationCollectionPipelineBehaviorTest
+    : IDisposable
 {
-    public sealed class FluentValidationCollectionPipelineBehaviorTest
-        : IDisposable
+    private readonly MockRepository _mockRepository;
+    private FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>? _sut;
+    private IEnumerable<IValidator<SampleRequest>>? _validators;
+
+    public FluentValidationCollectionPipelineBehaviorTest()
     {
-        private readonly MockRepository _mockRepository;
-        private FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>? _sut;
-        private IEnumerable<IValidator<SampleRequest>>? _validators;
+        _mockRepository = new MockRepository(MockBehavior.Strict);
+    }
 
-        public FluentValidationCollectionPipelineBehaviorTest()
-        {
-            _mockRepository = new MockRepository(MockBehavior.Strict);
-        }
+    public void Dispose()
+    {
+        _mockRepository.VerifyAll();
+    }
 
-        public void Dispose()
-        {
-            _mockRepository.VerifyAll();
-        }
+    [Fact]
+    public async Task ShouldThrowExceptionWhenNullAsNextWasPassedAsync()
+    {
+        // Arrange
+        _validators = Enumerable.Empty<IValidator<SampleRequest>>();
+        _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
+        var request = new SampleRequest();
+        var cancellationToken = CancellationToken.None;
+        const RequestHandlerDelegate<SampleResponse>? next = null;
 
-        [Fact]
-        public async Task ShouldThrowExceptionWhenNullAsNextWasPassedAsync()
-        {
-            // Arrange
-            _validators = Enumerable.Empty<IValidator<SampleRequest>>();
-            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
-            var request = new SampleRequest();
-            var cancellationToken = CancellationToken.None;
-            const RequestHandlerDelegate<SampleResponse>? next = null;
-
-            // Act
+        // Act
 #pragma warning disable CS8604 // Possible null reference argument.
 #pragma warning disable SA1115 // Parameter should follow comma
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-            Func<Task> func = async () => await _sut.Handle(
+        Func<Task> func = async () => await _sut.Handle(
                 request,
                 cancellationToken,
                 next)
-                .ConfigureAwait(false);
+            .ConfigureAwait(false);
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 #pragma warning restore SA1115 // Parameter should follow comma
 #pragma warning restore CS8604 // Possible null reference argument.
 
-            // Assert
-            using (new AssertionScope())
-            {
-                await func.Should().ThrowAsync<ArgumentNullException>().ConfigureAwait(false);
-            }
-        }
-
-        [Fact]
-        public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
+        // Assert
+        using (new AssertionScope())
         {
-            // Arrange
-            _validators = Enumerable.Empty<IValidator<SampleRequest>>();
-            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
-            var request = new SampleRequest();
-            var cancellationToken = CancellationToken.None;
-            static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
-
-            // Act
-            var result = await _sut.Handle(
-                request,
-                cancellationToken,
-                Next);
-
-            // Assert
-            using (new AssertionScope())
-            {
-                result.Should().NotBeNull();
-            }
+            await func.Should().ThrowAsync<ArgumentNullException>().ConfigureAwait(false);
         }
+    }
 
-        [Fact]
-        public async Task ShouldProcessCorrectlyWhenNullValidatorUsedAsync()
+    [Fact]
+    public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
+    {
+        // Arrange
+        _validators = Enumerable.Empty<IValidator<SampleRequest>>();
+        _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
+        var request = new SampleRequest();
+        var cancellationToken = CancellationToken.None;
+        static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
+
+        // Act
+        var result = await _sut.Handle(
+            request,
+            cancellationToken,
+            Next);
+
+        // Assert
+        using (new AssertionScope())
         {
-            // Arrange
-            _validators = new List<IValidator<SampleRequest>> { new NullValidator<SampleRequest>() };
-            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
-            var request = new SampleRequest();
-            var cancellationToken = CancellationToken.None;
-            static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
-
-            // Act
-            var result = await _sut.Handle(
-                request,
-                cancellationToken,
-                Next);
-
-            // Assert
-            using (new AssertionScope())
-            {
-                result.Should().NotBeNull();
-            }
+            result.Should().NotBeNull();
         }
+    }
 
-        [Fact]
-        public async Task ShouldReturnErrorsWhenInvalidRequestPassedAsync()
+    [Fact]
+    public async Task ShouldProcessCorrectlyWhenNullValidatorUsedAsync()
+    {
+        // Arrange
+        _validators = new List<IValidator<SampleRequest>> { new NullValidator<SampleRequest>() };
+        _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
+        var request = new SampleRequest();
+        var cancellationToken = CancellationToken.None;
+        static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
+
+        // Act
+        var result = await _sut.Handle(
+            request,
+            cancellationToken,
+            Next);
+
+        // Assert
+        using (new AssertionScope())
         {
-            // Arrange
-            _validators = new List<IValidator<SampleRequest>>
-            {
-                new SampleRequestIdGreaterThanZeroValidator(),
-                new SampleRequestNameNonEmptyValidator(),
-            };
-            _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
-            var request = new SampleRequest();
-            var cancellationToken = CancellationToken.None;
-            static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
+            result.Should().NotBeNull();
+        }
+    }
 
-            // Act
-            Func<Task> func = async () => await _sut.Handle(
-                request,
-                cancellationToken,
-                Next).ConfigureAwait(false);
+    [Fact]
+    public async Task ShouldReturnErrorsWhenInvalidRequestPassedAsync()
+    {
+        // Arrange
+        _validators = new List<IValidator<SampleRequest>>
+        {
+            new SampleRequestIdGreaterThanZeroValidator(),
+            new SampleRequestNameNonEmptyValidator(),
+        };
+        _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
+        var request = new SampleRequest();
+        var cancellationToken = CancellationToken.None;
+        static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
 
-            // Assert
-            using (new AssertionScope())
-            {
-                var exception = (await func.Should().ThrowAsync<ValidationException>().ConfigureAwait(false)).Which;
-                exception.Errors.Should().HaveCount(2);
-            }
+        // Act
+        Func<Task> func = async () => await _sut.Handle(
+            request,
+            cancellationToken,
+            Next).ConfigureAwait(false);
+
+        // Assert
+        using (new AssertionScope())
+        {
+            var exception = (await func.Should().ThrowAsync<ValidationException>().ConfigureAwait(false)).Which;
+            exception.Errors.Should().HaveCount(2);
         }
     }
 }
