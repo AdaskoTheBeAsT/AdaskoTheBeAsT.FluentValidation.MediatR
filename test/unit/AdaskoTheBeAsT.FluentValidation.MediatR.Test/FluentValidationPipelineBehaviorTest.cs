@@ -60,7 +60,7 @@ public sealed class FluentValidationPipelineBehaviorTest
     public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
     {
         // Arrange
-        _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(null);
+        _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(validator: null);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
         static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });

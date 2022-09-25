@@ -59,7 +59,7 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
 #pragma warning restore SA1115 // Parameter should follow comma
 #pragma warning restore CS8604 // Possible null reference argument.
 
-        // Act & Assert
+        // Act and Assert
         using (new AssertionScope())
         {
             await func.Should().ThrowAsync<ArgumentNullException>().ConfigureAwait(false);
@@ -70,7 +70,7 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
     public async Task ShouldProcessCorrectlyWhenNoValidatorUsedAsync()
     {
         // Arrange
-        _sut = new FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(null);
+        _sut = new FluentValidationStreamPipelineBehavior<SampleStreamRequest, SampleStreamResponse>(validator: null);
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };

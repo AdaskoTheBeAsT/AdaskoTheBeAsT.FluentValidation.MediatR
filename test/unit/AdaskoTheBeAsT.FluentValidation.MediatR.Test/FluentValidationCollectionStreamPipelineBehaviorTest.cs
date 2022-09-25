@@ -60,7 +60,7 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
 #pragma warning restore SA1115 // Parameter should follow comma
 #pragma warning restore CS8604 // Possible null reference argument.
 
-        // Act & Assert
+        // Act and Assert
         using (new AssertionScope())
         {
             await func.Should().ThrowAsync<ArgumentNullException>().ConfigureAwait(false);
