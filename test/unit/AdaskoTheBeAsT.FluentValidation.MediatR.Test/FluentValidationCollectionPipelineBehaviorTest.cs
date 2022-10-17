@@ -45,8 +45,8 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
 #pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
         Func<Task> func = async () => await _sut.Handle(
                 request,
-                cancellationToken,
-                next)
+                next,
+                cancellationToken)
             .ConfigureAwait(false);
 #pragma warning restore CS8625 // Cannot convert null literal to non-nullable reference type.
 #pragma warning restore SA1115 // Parameter should follow comma
@@ -72,8 +72,8 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
         // Act
         var result = await _sut.Handle(
             request,
-            cancellationToken,
-            Next);
+            Next,
+            cancellationToken);
 
         // Assert
         using (new AssertionScope())
@@ -95,8 +95,8 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
         // Act
         var result = await _sut.Handle(
             request,
-            cancellationToken,
-            Next);
+            Next,
+            cancellationToken);
 
         // Assert
         using (new AssertionScope())
@@ -122,8 +122,8 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
         // Act
         Func<Task> func = async () => await _sut.Handle(
             request,
-            cancellationToken,
-            Next).ConfigureAwait(false);
+            Next,
+            cancellationToken).ConfigureAwait(false);
 
         // Assert
         using (new AssertionScope())

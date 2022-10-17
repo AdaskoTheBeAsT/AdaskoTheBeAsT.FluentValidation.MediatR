@@ -47,8 +47,8 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
             SampleStreamResponse? response = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   next)
+                                   next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 response = item;
@@ -82,8 +82,8 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   Next)
+                                   Next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 resp = item;
@@ -117,8 +117,8 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   Next)
+                                   Next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 resp = item;
@@ -156,8 +156,8 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   Next)
+                                   Next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 resp = item;

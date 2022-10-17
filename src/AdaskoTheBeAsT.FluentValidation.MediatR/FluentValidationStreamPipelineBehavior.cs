@@ -22,8 +22,8 @@ public class FluentValidationStreamPipelineBehavior<TRequest, TResponse>
 
     public IAsyncEnumerable<TResponse> Handle(
         TRequest request,
-        CancellationToken cancellationToken,
-        StreamHandlerDelegate<TResponse> next)
+        StreamHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
         if (next is null)
         {

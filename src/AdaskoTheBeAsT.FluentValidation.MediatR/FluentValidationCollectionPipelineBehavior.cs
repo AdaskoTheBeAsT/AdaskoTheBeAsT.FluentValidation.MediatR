@@ -21,8 +21,8 @@ public class FluentValidationCollectionPipelineBehavior<TRequest, TResponse>
 
     public Task<TResponse> Handle(
         TRequest request,
-        CancellationToken cancellationToken,
-        RequestHandlerDelegate<TResponse> next)
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
         if (next is null)
         {

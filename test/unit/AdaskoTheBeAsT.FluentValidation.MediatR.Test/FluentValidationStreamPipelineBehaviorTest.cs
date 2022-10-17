@@ -46,8 +46,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
             SampleStreamResponse? response = null;
             await foreach (var item in _sut.Handle(
                     request,
-                    cancellationToken,
-                    next)
+                    next,
+                    cancellationToken)
                 .ConfigureAwait(false))
             {
                 response = item;
@@ -80,8 +80,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   Next)
+                                   Next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 resp = item;
@@ -115,8 +115,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   Next)
+                                   Next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 resp = item;
@@ -150,8 +150,8 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   cancellationToken,
-                                   Next)
+                                   Next,
+                                   cancellationToken)
                                .ConfigureAwait(false))
             {
                 resp = item;
