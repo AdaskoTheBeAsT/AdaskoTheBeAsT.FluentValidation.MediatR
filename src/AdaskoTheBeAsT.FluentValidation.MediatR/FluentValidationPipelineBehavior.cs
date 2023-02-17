@@ -9,7 +9,7 @@ namespace AdaskoTheBeAsT.FluentValidation.MediatR;
 
 public class FluentValidationPipelineBehavior<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : IRequest<TResponse>
+    where TRequest : notnull
 {
     private readonly IValidator<TRequest>? _validator;
 

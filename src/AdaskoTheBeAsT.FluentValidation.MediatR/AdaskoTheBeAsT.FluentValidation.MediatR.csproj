@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
     <ProjectGuid>{3BBA0C84-9CC6-47D0-BEA4-A7A015CF5E37}</ProjectGuid>
   </PropertyGroup>
 
@@ -10,7 +10,7 @@
     <RepositoryType>github</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Description>FluentValidation extensions for MediatR</Description>
-    <PackageVersion>9.1.0</PackageVersion>
+    <PackageVersion>10.0.0</PackageVersion>
     <Authors>Adam "AdaskoTheBeAsT" Pluciński</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
@@ -22,7 +22,8 @@
     <Copyright>Adam "AdaskoTheBeAsT" Pluciński</Copyright>
     <PackageTags>FluentValidation;MediatR</PackageTags>
     <PackageReleaseNotes>
-      - .NET 7 release
+      - MediatR 12.0.0
+      - FluentValidation 11.5.0
     </PackageReleaseNotes>
   </PropertyGroup>
 
@@ -32,8 +33,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.4.0" />
-    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="FluentValidation" Version="11.5.0" />
+    <PackageReference Include="MediatR" Version="12.0.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
