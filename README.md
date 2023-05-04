@@ -5,8 +5,7 @@ FluentValidation behavior for MediatR
 ## Badges
 
 [![CodeFactor](https://www.codefactor.io/repository/github/adaskothebeast/adaskothebeast.fluentvalidation.mediatr/badge)](https://www.codefactor.io/repository/github/adaskothebeast/adaskothebeast.fluentvalidation.mediatr)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/alerts/)
-[![Build Status](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.MediatR/_apis/build/status/AdaskoTheBeAsT.AdaskoTheBeAsT.FluentValidation.MediatR?branchName=master)](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.MediatR/_build/latest?definitionId=9&branchName=master)
+[![Build Status](https://img.shields.io/azure-devops/build/adaskothebeast/AdaskoTheBeAsT.FluentValidation.MediatR/15)](https://img.shields.io/azure-devops/build/adaskothebeast/AdaskoTheBeAsT.FluentValidation.MediatR/15)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/15)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.MediatR/15?style=plastic)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR&metric=alert_status)](https://sonarcloud.io/dashboard?id=AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR)
@@ -21,6 +20,7 @@ FluentValidation behavior for MediatR
 It can be used in combination with [AdaskoTheBeAsT.FluentValidation.SimpleInjector](https://github.com/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.SimpleInjector) [AdaskoTheBeAsT.MediatR.SimpleInjector](https://github.com/AdaskoTheBeAsT/AdaskoTheBeAsT.MediatR.SimpleInjector)
 
 ### Validators registered as single
+
 There should be only one validator per target
 If there is multiple combined validators needed then prepare one which will gather all rules from other
 based  on [Fluent Validation Including Rules](https://docs.fluentvalidation.net/en/latest/including-rules.html)
