@@ -62,7 +62,7 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
         // Act and Assert
         using (new AssertionScope())
         {
-            await func.Should().ThrowAsync<ArgumentNullException>().ConfigureAwait(false);
+            await func.Should().ThrowAsync<ArgumentNullException>();
         }
     }
 
@@ -163,7 +163,7 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
         // Assert
         using (new AssertionScope())
         {
-            var exception = (await func.Should().ThrowAsync<ValidationException>().ConfigureAwait(false)).Which;
+            var exception = (await func.Should().ThrowAsync<ValidationException>()).Which;
             exception.Errors.Should().HaveCount(1);
         }
     }
