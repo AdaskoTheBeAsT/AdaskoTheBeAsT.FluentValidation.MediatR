@@ -25,10 +25,16 @@ public class FluentValidationStreamPipelineBehavior<TRequest, TResponse>
         StreamHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
         if (next is null)
         {
             throw new ArgumentNullException(nameof(next));
         }
+#endif
+
+#if NET6_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(next);
+#endif
 
         return HandleInternalAsync(request, next, cancellationToken);
     }

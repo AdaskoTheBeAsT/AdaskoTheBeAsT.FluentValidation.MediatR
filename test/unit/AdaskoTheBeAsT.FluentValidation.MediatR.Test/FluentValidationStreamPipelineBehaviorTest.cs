@@ -164,7 +164,7 @@ public sealed class FluentValidationStreamPipelineBehaviorTest
         using (new AssertionScope())
         {
             var exception = (await func.Should().ThrowAsync<ValidationException>()).Which;
-            exception.Errors.Should().HaveCount(1);
+            exception.Errors.Should().ContainSingle();
         }
     }
 }
