@@ -62,12 +62,12 @@ public sealed class FluentValidationPipelineBehaviorTest
         _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(validator: null);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync() => Task.FromResult(new SampleResponse { Result = "ok" });
 
         // Act
         var result = await _sut.Handle(
             request,
-            Next,
+            NextAsync,
             cancellationToken);
 
         // Assert
@@ -85,12 +85,12 @@ public sealed class FluentValidationPipelineBehaviorTest
         _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync() => Task.FromResult(new SampleResponse { Result = "ok" });
 
         // Act
         var result = await _sut.Handle(
             request,
-            Next,
+            NextAsync,
             cancellationToken);
 
         // Assert
@@ -108,12 +108,12 @@ public sealed class FluentValidationPipelineBehaviorTest
         _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> Next() => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync() => Task.FromResult(new SampleResponse { Result = "ok" });
 
         // Act
         Func<Task> func = async () => await _sut.Handle(
             request,
-            Next,
+            NextAsync,
             cancellationToken);
 
         // Assert

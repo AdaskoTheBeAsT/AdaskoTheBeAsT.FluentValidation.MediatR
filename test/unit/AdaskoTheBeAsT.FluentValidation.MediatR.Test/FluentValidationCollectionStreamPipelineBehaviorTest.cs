@@ -76,13 +76,13 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };
-        IAsyncEnumerable<SampleStreamResponse> Next() => new[] { response }.ToAsyncEnumerable();
-        async Task<SampleStreamResponse?> Func()
+        IAsyncEnumerable<SampleStreamResponse> NextAsync() => new[] { response }.ToAsyncEnumerable();
+        async Task<SampleStreamResponse?> FuncAsync()
         {
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   Next,
+                                   NextAsync,
                                    cancellationToken)
                                .ConfigureAwait(false))
             {
@@ -93,7 +93,7 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
         }
 
         // Act
-        var result = await Func();
+        var result = await FuncAsync();
 
         // Assert
         using (new AssertionScope())
@@ -111,13 +111,13 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };
-        IAsyncEnumerable<SampleStreamResponse> Next() => new[] { response }.ToAsyncEnumerable();
-        async Task<SampleStreamResponse?> Func()
+        IAsyncEnumerable<SampleStreamResponse> NextAsync() => new[] { response }.ToAsyncEnumerable();
+        async Task<SampleStreamResponse?> FuncAsync()
         {
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   Next,
+                                   NextAsync,
                                    cancellationToken)
                                .ConfigureAwait(false))
             {
@@ -128,7 +128,7 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
         }
 
         // Act
-        var result = await Func();
+        var result = await FuncAsync();
 
         // Assert
         using (new AssertionScope())
@@ -150,13 +150,13 @@ public sealed class FluentValidationCollectionStreamPipelineBehaviorTest
         var request = new SampleStreamRequest();
         var cancellationToken = CancellationToken.None;
         var response = new SampleStreamResponse { Result = "ok" };
-        IAsyncEnumerable<SampleStreamResponse> Next() => new[] { response }.ToAsyncEnumerable();
+        IAsyncEnumerable<SampleStreamResponse> NextAsync() => new[] { response }.ToAsyncEnumerable();
         Func<Task<SampleStreamResponse?>> func = async () =>
         {
             SampleStreamResponse? resp = null;
             await foreach (var item in _sut.Handle(
                                    request,
-                                   Next,
+                                   NextAsync,
                                    cancellationToken)
                                .ConfigureAwait(false))
             {
