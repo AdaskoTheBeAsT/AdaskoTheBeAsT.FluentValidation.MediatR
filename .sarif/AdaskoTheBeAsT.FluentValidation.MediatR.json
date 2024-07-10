@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.10.0.0",
+        "fileVersion": "4.10.0-3.24324.8 (04fb3916)",
+        "semanticVersion": "4.10.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CC0031",
+          "level": "error",
+          "message": "Verify if delegate 'next' is null before invoking it.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 38,
+                  "endLine": 64,
+                  "endColumn": 44
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CC0031",
+          "level": "error",
+          "message": "Verify if delegate 'next' is null before invoking it.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 22,
+                  "endLine": 59,
+                  "endColumn": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CC0031",
+          "level": "error",
+          "message": "Verify if delegate 'next' is null before invoking it.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationStreamPipelineBehavior.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 38,
+                  "endLine": 61,
+                  "endColumn": 44
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CC0031",
+          "level": "error",
+          "message": "Verify if delegate 'next' is null before invoking it.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 22,
+                  "endLine": 63,
+                  "endColumn": 28
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "rules": {
+        "CC0031": {
+          "id": "CC0031",
+          "shortDescription": "Check for null before calling a delegate",
+          "fullDescription": "In C#6 a delegate can be invoked using the null-propagating operator (?.) and it's invoke method to avoid throwing a NullReference exception when there is no method attached to the delegate. Or you can check for null before calling the delegate.",
+          "defaultLevel": "warning",
+          "helpUri": "https://code-cracker.github.io/diagnostics/CC0031.html",
+          "properties": {
+            "category": "Design",
+            "isEnabledByDefault": true
+          }
+        }
+      }
+    }
+  ]
+}
