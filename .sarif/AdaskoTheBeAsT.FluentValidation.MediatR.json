@@ -5,9 +5,9 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.10.0.0",
-        "fileVersion": "4.10.0-3.24324.8 (04fb3916)",
-        "semanticVersion": "4.10.0",
+        "version": "4.11.0.0",
+        "fileVersion": "4.11.0-3.24374.1 (f99bb16a)",
+        "semanticVersion": "4.11.0",
         "language": "en-US"
       },
       "results": [
@@ -21,32 +21,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
                 "region": {
-                  "startLine": 64,
-                  "startColumn": 38,
-                  "endLine": 64,
-                  "endColumn": 44
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CC0031",
-          "level": "error",
-          "message": "Verify if delegate 'next' is null before invoking it.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
-                "region": {
-                  "startLine": 59,
+                  "startLine": 63,
                   "startColumn": 22,
-                  "endLine": 59,
+                  "endLine": 63,
                   "endColumn": 28
                 }
               }
@@ -84,12 +63,33 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
                 "region": {
-                  "startLine": 63,
+                  "startLine": 59,
                   "startColumn": 22,
-                  "endLine": 63,
+                  "endLine": 59,
                   "endColumn": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CC0031",
+          "level": "error",
+          "message": "Verify if delegate 'next' is null before invoking it.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 38,
+                  "endLine": 64,
+                  "endColumn": 44
                 }
               }
             }

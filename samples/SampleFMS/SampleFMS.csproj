@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.MediatR" Version="11.0.0" />
-    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.SimpleInjector" Version="9.0.0" />
-    <PackageReference Include="AdaskoTheBeAsT.MediatR.SimpleInjector" Version="9.0.0" />
+    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.MediatR" Version="11.0.2" />
+    <PackageReference Include="AdaskoTheBeAsT.FluentValidation.SimpleInjector" Version="9.0.2" />
+    <PackageReference Include="AdaskoTheBeAsT.MediatR.SimpleInjector" Version="9.0.3" />
   </ItemGroup>
 
 </Project>
