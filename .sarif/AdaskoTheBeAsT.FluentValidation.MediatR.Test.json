@@ -6,7 +6,7 @@
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
         "version": "4.11.0.0",
-        "fileVersion": "4.11.0-3.24374.1 (f99bb16a)",
+        "fileVersion": "4.11.0-3.24460.3 (5649376e)",
         "semanticVersion": "4.11.0",
         "language": "en-US"
       },
@@ -21,7 +21,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationStreamPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 17,
+                  "endLine": 45,
+                  "endColumn": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "error",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationStreamPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 49,
                   "startColumn": 21,
@@ -42,7 +63,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 50,
                   "startColumn": 36,
@@ -63,32 +84,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 48,
                   "startColumn": 17,
                   "endLine": 48,
-                  "endColumn": 21
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CS8625",
-          "level": "error",
-          "message": "Cannot convert null literal to non-nullable reference type.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 17,
-                  "endLine": 45,
                   "endColumn": 21
                 }
               }
