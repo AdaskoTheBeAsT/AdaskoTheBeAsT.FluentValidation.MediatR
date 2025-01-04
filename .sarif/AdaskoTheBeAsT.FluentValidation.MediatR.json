@@ -5,9 +5,9 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.11.0.0",
-        "fileVersion": "4.11.0-3.24460.3 (5649376e)",
-        "semanticVersion": "4.11.0",
+        "version": "4.12.0.0",
+        "fileVersion": "4.12.0-3.24572.7 (dfa7fc6b)",
+        "semanticVersion": "4.12.0",
         "language": "en-US"
       },
       "results": [
@@ -21,11 +21,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
                 "region": {
-                  "startLine": 63,
+                  "startLine": 59,
                   "startColumn": 22,
-                  "endLine": 63,
+                  "endLine": 59,
                   "endColumn": 28
                 }
               }
@@ -63,12 +63,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
                 "region": {
-                  "startLine": 64,
-                  "startColumn": 38,
-                  "endLine": 64,
-                  "endColumn": 44
+                  "startLine": 63,
+                  "startColumn": 22,
+                  "endLine": 63,
+                  "endColumn": 28
                 }
               }
             }
@@ -84,12 +84,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
                 "region": {
-                  "startLine": 59,
-                  "startColumn": 22,
-                  "endLine": 59,
-                  "endColumn": 28
+                  "startLine": 64,
+                  "startColumn": 38,
+                  "endLine": 64,
+                  "endColumn": 44
                 }
               }
             }

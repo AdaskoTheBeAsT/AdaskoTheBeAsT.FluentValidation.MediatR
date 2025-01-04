@@ -5,33 +5,12 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.11.0.0",
-        "fileVersion": "4.11.0-3.24460.3 (5649376e)",
-        "semanticVersion": "4.11.0",
+        "version": "4.12.0.0",
+        "fileVersion": "4.12.0-3.24572.7 (dfa7fc6b)",
+        "semanticVersion": "4.12.0",
         "language": "en-US"
       },
       "results": [
-        {
-          "ruleId": "CS8625",
-          "level": "error",
-          "message": "Cannot convert null literal to non-nullable reference type.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 17,
-                  "endLine": 45,
-                  "endColumn": 21
-                }
-              }
-            }
-          ]
-        },
         {
           "ruleId": "CS8625",
           "level": "error",
@@ -63,12 +42,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 50,
-                  "startColumn": 36,
-                  "endLine": 50,
-                  "endColumn": 40
+                  "startLine": 45,
+                  "startColumn": 17,
+                  "endLine": 45,
+                  "endColumn": 21
                 }
               }
             }
@@ -90,6 +69,27 @@
                   "startColumn": 17,
                   "endLine": 48,
                   "endColumn": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "error",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 50,
+                  "startColumn": 36,
+                  "endLine": 50,
+                  "endColumn": 40
                 }
               }
             }
