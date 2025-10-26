@@ -19,20 +19,6 @@ variables:
 
 steps:
   - task: UseDotNet@2
-    displayName: "Use .NET Core SDK 6.0.x"
-    inputs:
-      packageType: "sdk"
-      version: 6.0.x
-      installationPath: $(Agent.ToolsDirectory)/dotnet
-
-  - task: UseDotNet@2
-    displayName: "Use .NET Core SDK 7.0.x"
-    inputs:
-      packageType: "sdk"
-      version: 7.0.x
-      installationPath: $(Agent.ToolsDirectory)/dotnet
-
-  - task: UseDotNet@2
     displayName: "Use .NET Core SDK 8.0.x"
     inputs:
       packageType: "sdk"
@@ -55,7 +41,14 @@ steps:
     inputs:
       command: restore
       verbosityRestore: Quiet
-      arguments: AdaskoTheBeAsT.FluentValidation.MediatR.sln
+      arguments: AdaskoTheBeAsT.FluentValidation.MediatR.sln --verbosity quiet
+
+  - task: DotNetCoreCLI@2
+    displayName: "Restore dotnet tools"
+    inputs:
+      command: 'custom'
+      custom: 'tool'
+      arguments: 'restore'
 
   - task: SonarCloudPrepare@3
     displayName: "Prepare analysis on SonarCloud"
@@ -66,12 +59,13 @@ steps:
       projectKey: "AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.MediatR"
       projectName: AdaskoTheBeAsT.FluentValidation.MediatR
       extraProperties: |
+        sonar.working.directory=$(Build.ArtifactStagingDirectory)/.sonar
         sonar.resharper.cs.reportPath=$(Build.SourcesDirectory)/CodeQualityResults.xml
 
   - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
-      arguments: "AdaskoTheBeAsT.FluentValidation.MediatR.sln --configuration $(buildConfiguration)"
+      arguments: "AdaskoTheBeAsT.FluentValidation.MediatR.sln --configuration $(buildConfiguration) --no-restore"
 
   - task: CopyFiles@2
     displayName: "Copy nuget packages"
@@ -105,13 +99,14 @@ steps:
         --settings $(Build.SourcesDirectory)/.runsettings
         /p:RunCodeAnalysis=false
 
-  - task: ResharperCli@2
+  - task: DotNetCoreCLI@2
+    displayName: "Launch ReSharper inspect code"
+    continueOnError: true
     inputs:
-      solutionOrProjectPath: "AdaskoTheBeAsT.FluentValidation.MediatR.sln"
-      resharperNuGetVersion: "2023.3.3"
-      failBuildLevelSelector: "Warning"
-      resultsOutputFilePath: "$(Build.SourcesDirectory)/CodeQualityResults.xml"
-      additionalArguments: "--no-build"
+      command: "custom"
+      custom: "jb"
+      arguments: "inspectcode $(Build.SourcesDirectory)/AdaskoTheBeAsT.FluentValidation.MediatR.sln -o=$(Build.SourcesDirectory)/CodeQualityResults.xml"
+
 
   - task: SonarCloudAnalyze@3
     displayName: Sonar Cloud analyze
@@ -139,11 +134,10 @@ steps:
       reports: "$(testResultsDirectory)/**/coverage.cobertura.xml"
       targetdir: "$(testResultsDirectory)/coverage"
 
-  - task: PublishCodeCoverageResults@1
+  - task: PublishCodeCoverageResults@2
     inputs:
-      codeCoverageTool: "Cobertura"
       summaryFileLocation: "$(testResultsDirectory)/**/coverage.cobertura.xml"
-      reportDirectory: "$(testResultsDirectory)/coverage"
+      pathToSources: "$(Build.SourcesDirectory)"
 
   - task: CopyFiles@2
     displayName: "Copy nuget packages"

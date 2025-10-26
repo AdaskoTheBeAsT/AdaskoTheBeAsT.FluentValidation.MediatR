@@ -1,8 +1,8 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using FluentAssertions;
-using FluentAssertions.Execution;
+using AwesomeAssertions;
+using AwesomeAssertions.Execution;
 using FluentValidation;
 using MediatR;
 using Moq;
@@ -62,7 +62,7 @@ public sealed class FluentValidationPipelineBehaviorTest
         _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(validator: null);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> NextAsync() => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync(CancellationToken cancellationToken = default) => Task.FromResult(new SampleResponse { Result = "ok" });
 
         // Act
         var result = await _sut.Handle(
@@ -85,7 +85,7 @@ public sealed class FluentValidationPipelineBehaviorTest
         _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> NextAsync() => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync(CancellationToken cancellationToken = default) => Task.FromResult(new SampleResponse { Result = "ok" });
 
         // Act
         var result = await _sut.Handle(
@@ -108,7 +108,7 @@ public sealed class FluentValidationPipelineBehaviorTest
         _sut = new FluentValidationPipelineBehavior<SampleRequest, SampleResponse>(_validator);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> NextAsync() => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync(CancellationToken cancellationToken = default) => Task.FromResult(new SampleResponse { Result = "ok" });
 
         // Act
         Func<Task> func = async () => await _sut.Handle(

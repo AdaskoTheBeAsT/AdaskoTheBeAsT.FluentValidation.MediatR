@@ -5,9 +5,9 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.12.0.0",
-        "fileVersion": "4.12.0-3.24572.7 (dfa7fc6b)",
-        "semanticVersion": "4.12.0",
+        "version": "4.14.0.0",
+        "fileVersion": "4.14.0-3.25412.6 (c167adef)",
+        "semanticVersion": "4.14.0",
         "language": "en-US"
       },
       "results": [
@@ -21,12 +21,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationStreamPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 49,
-                  "startColumn": 21,
-                  "endLine": 49,
-                  "endColumn": 25
+                  "startLine": 48,
+                  "startColumn": 17,
+                  "endLine": 48,
+                  "endColumn": 21
                 }
               }
             }
@@ -63,12 +63,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 48,
-                  "startColumn": 17,
-                  "endLine": 48,
-                  "endColumn": 21
+                  "startLine": 50,
+                  "startColumn": 36,
+                  "endLine": 50,
+                  "endColumn": 40
                 }
               }
             }
@@ -84,16 +84,294 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationStreamPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 50,
-                  "startColumn": 36,
-                  "endLine": 50,
-                  "endColumn": 40
+                  "startLine": 49,
+                  "startColumn": 21,
+                  "endLine": 49,
+                  "endColumn": 25
                 }
               }
             }
           ]
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 47,
+                  "endLine": 65,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 92,
+                  "startColumn": 47,
+                  "endLine": 92,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 47,
+                  "endLine": 88,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 47,
+                  "endLine": 69,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 47,
+                  "endLine": 119,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 47,
+                  "endLine": 111,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "IDE0028",
+          "level": "note",
+          "message": "Collection initialization can be simplified",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 23,
+                  "endLine": 88,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 23,
+                  "endLine": 88,
+                  "endColumn": 97
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "ChangesSemanticsName": "",
+              "UseCollectionExpressionName": "UseCollectionExpressionName"
+            }
+          }
+        },
+        {
+          "ruleId": "IDE0028",
+          "level": "note",
+          "message": "Collection initialization can be simplified",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 23,
+                  "endLine": 111,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 23,
+                  "endLine": 115,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "ChangesSemanticsName": "",
+              "UseCollectionExpressionName": "UseCollectionExpressionName"
+            }
+          }
+        },
+        {
+          "ruleId": "IDE0028",
+          "level": "note",
+          "message": "Collection initialization can be simplified",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 23,
+                  "endLine": 144,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 23,
+                  "endLine": 148,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "ChangesSemanticsName": "",
+              "UseCollectionExpressionName": "UseCollectionExpressionName"
+            }
+          }
+        },
+        {
+          "ruleId": "IDE0028",
+          "level": "note",
+          "message": "Collection initialization can be simplified",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 23,
+                  "endLine": 109,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 23,
+                  "endLine": 109,
+                  "endColumn": 109
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "ChangesSemanticsName": "",
+              "UseCollectionExpressionName": "UseCollectionExpressionName"
+            }
+          }
         }
       ],
       "rules": {
@@ -108,6 +386,33 @@
             "tags": [
               "Compiler",
               "Telemetry"
+            ]
+          }
+        },
+        "IDE0028": {
+          "id": "IDE0028",
+          "shortDescription": "Simplify collection initialization",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0028",
+          "properties": {
+            "category": "Style",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnforceOnBuild_Recommended"
+            ]
+          }
+        },
+        "RCS1163": {
+          "id": "RCS1163",
+          "shortDescription": "Unused parameter",
+          "defaultLevel": "note",
+          "helpUri": "https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1163",
+          "properties": {
+            "category": "Roslynator",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Unnecessary"
             ]
           }
         }
