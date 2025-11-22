@@ -5,10 +5,10 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.14.0.0",
-        "fileVersion": "4.14.0-3.25412.6 (c167adef)",
-        "semanticVersion": "4.14.0",
-        "language": "en-US"
+        "version": "5.0.0.0",
+        "fileVersion": "5.0.0-2.25523.111 (b0f34d51)",
+        "semanticVersion": "5.0.0",
+        "language": "en"
       },
       "results": [
         {
@@ -21,32 +21,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
                 "region": {
-                  "startLine": 64,
-                  "startColumn": 38,
-                  "endLine": 64,
-                  "endColumn": 44
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "CC0031",
-          "level": "error",
-          "message": "Verify if delegate 'next' is null before invoking it.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
-                "region": {
-                  "startLine": 59,
+                  "startLine": 50,
                   "startColumn": 22,
-                  "endLine": 59,
+                  "endLine": 50,
                   "endColumn": 28
                 }
               }
@@ -63,11 +42,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationStreamPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationStreamPipelineBehavior.cs",
                 "region": {
-                  "startLine": 61,
+                  "startLine": 52,
                   "startColumn": 38,
-                  "endLine": 61,
+                  "endLine": 52,
                   "endColumn": 44
                 }
               }
@@ -84,11 +63,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
                 "region": {
-                  "startLine": 63,
+                  "startLine": 54,
                   "startColumn": 22,
-                  "endLine": 63,
+                  "endLine": 54,
                   "endColumn": 28
                 }
               }
@@ -96,18 +75,39 @@
           ]
         },
         {
-          "ruleId": "MA0040",
+          "ruleId": "CC0031",
+          "level": "error",
+          "message": "Verify if delegate 'next' is null before invoking it.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionStreamPipelineBehavior.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 38,
+                  "endLine": 55,
+                  "endColumn": 44
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CA2016",
           "level": "note",
-          "message": "Use an overload with a CancellationToken, available tokens: cancellationToken",
+          "message": "Forward the 'cancellationToken' parameter to the 'Invoke' method or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
                 "region": {
-                  "startLine": 59,
+                  "startLine": 50,
                   "startColumn": 22,
-                  "endLine": 59,
-                  "endColumn": 28
+                  "endLine": 50,
+                  "endColumn": 26
                 }
               }
             }
@@ -115,10 +115,9 @@
           "properties": {
             "warningLevel": 1,
             "customProperties": {
-              "CancellationTokens": "cancellationToken",
-              "ParameterIndex": "0",
-              "ParameterIsEnumeratorCancellation": "False",
-              "ParameterName": "t"
+              "ArgumentName": "cancellationToken",
+              "ParameterName": null,
+              "ShouldFix": "1"
             }
           }
         },
@@ -129,11 +128,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
                 "region": {
-                  "startLine": 63,
+                  "startLine": 50,
                   "startColumn": 22,
-                  "endLine": 63,
+                  "endLine": 50,
                   "endColumn": 28
                 }
               }
@@ -151,16 +150,17 @@
         },
         {
           "ruleId": "CA2016",
+          "ruleKey": "CA2016-001",
           "level": "note",
           "message": "Forward the 'cancellationToken' parameter to the 'Invoke' method or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
                 "region": {
-                  "startLine": 63,
+                  "startLine": 50,
                   "startColumn": 22,
-                  "endLine": 63,
+                  "endLine": 50,
                   "endColumn": 26
                 }
               }
@@ -182,11 +182,65 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationPipelineBehavior.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
                 "region": {
-                  "startLine": 59,
+                  "startLine": 54,
                   "startColumn": 22,
-                  "endLine": 59,
+                  "endLine": 54,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "ArgumentName": "cancellationToken",
+              "ParameterName": null,
+              "ShouldFix": "1"
+            }
+          }
+        },
+        {
+          "ruleId": "MA0040",
+          "level": "note",
+          "message": "Use an overload with a CancellationToken, available tokens: cancellationToken",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 22,
+                  "endLine": 54,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "CancellationTokens": "cancellationToken",
+              "ParameterIndex": "0",
+              "ParameterIsEnumeratorCancellation": "False",
+              "ParameterName": "t"
+            }
+          }
+        },
+        {
+          "ruleId": "CA2016",
+          "ruleKey": "CA2016-001",
+          "level": "note",
+          "message": "Forward the 'cancellationToken' parameter to the 'Invoke' method or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/src/AdaskoTheBeAsT.FluentValidation.MediatR/FluentValidationCollectionPipelineBehavior.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 22,
+                  "endLine": 54,
                   "endColumn": 26
                 }
               }
@@ -204,6 +258,21 @@
       ],
       "rules": {
         "CA2016": {
+          "id": "CA2016",
+          "shortDescription": "Forward the 'CancellationToken' parameter to methods",
+          "fullDescription": "Forward the 'CancellationToken' parameter to methods to ensure the operation cancellation notifications gets properly propagated, or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2016",
+          "properties": {
+            "category": "Reliability",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CA2016-001": {
           "id": "CA2016",
           "shortDescription": "Forward the 'CancellationToken' parameter to methods",
           "fullDescription": "Forward the 'CancellationToken' parameter to methods to ensure the operation cancellation notifications gets properly propagated, or pass in 'CancellationToken.None' explicitly to indicate intentionally not propagating the token.",

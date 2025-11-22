@@ -40,8 +40,8 @@ public class FluentValidationCollectionPipelineBehavior<TRequest, TResponse>
 
         var validationResults = await Task.WhenAll(validationResultTasks).ConfigureAwait(false);
 
-        var failures = validationResults.FirstOrDefault()
-            ?.Errors
+        var failures = validationResults
+            .SelectMany(vr => vr.Errors)
             .Where(f => f != null)
             .ToList();
 

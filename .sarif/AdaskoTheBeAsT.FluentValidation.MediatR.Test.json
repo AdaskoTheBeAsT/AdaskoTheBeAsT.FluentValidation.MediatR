@@ -5,10 +5,10 @@
     {
       "tool": {
         "name": "Microsoft (R) Visual C# Compiler",
-        "version": "4.14.0.0",
-        "fileVersion": "4.14.0-3.25412.6 (c167adef)",
-        "semanticVersion": "4.14.0",
-        "language": "en-US"
+        "version": "5.0.0.0",
+        "fileVersion": "5.0.0-2.25523.111 (b0f34d51)",
+        "semanticVersion": "5.0.0",
+        "language": "en"
       },
       "results": [
         {
@@ -21,7 +21,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 48,
                   "startColumn": 17,
@@ -42,7 +42,28 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationStreamPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 21,
+                  "endLine": 49,
+                  "endColumn": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "error",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "suppressionStates": [
+            "suppressedInSource"
+          ],
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 45,
                   "startColumn": 17,
@@ -63,7 +84,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 50,
                   "startColumn": 36,
@@ -75,55 +96,13 @@
           ]
         },
         {
-          "ruleId": "CS8625",
-          "level": "error",
-          "message": "Cannot convert null literal to non-nullable reference type.",
-          "suppressionStates": [
-            "suppressedInSource"
-          ],
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationStreamPipelineBehaviorTest.cs",
-                "region": {
-                  "startLine": 49,
-                  "startColumn": 21,
-                  "endLine": 49,
-                  "endColumn": 25
-                }
-              }
-            }
-          ]
-        },
-        {
           "ruleId": "RCS1163",
           "level": "note",
           "message": "Unused parameter 'cancellationToken'",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
-                "region": {
-                  "startLine": 65,
-                  "startColumn": 47,
-                  "endLine": 65,
-                  "endColumn": 92
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "RCS1163",
-          "level": "note",
-          "message": "Unused parameter 'cancellationToken'",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 92,
                   "startColumn": 47,
@@ -144,28 +123,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
-                "region": {
-                  "startLine": 88,
-                  "startColumn": 47,
-                  "endLine": 88,
-                  "endColumn": 92
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "RCS1163",
-          "level": "note",
-          "message": "Unused parameter 'cancellationToken'",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 69,
                   "startColumn": 47,
@@ -186,7 +144,49 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 47,
+                  "endLine": 65,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 47,
+                  "endLine": 88,
+                  "endColumn": 92
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "RCS1163",
+          "level": "note",
+          "message": "Unused parameter 'cancellationToken'",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 119,
                   "startColumn": 47,
@@ -207,7 +207,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 111,
                   "startColumn": 47,
@@ -228,7 +228,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 88,
                   "startColumn": 23,
@@ -241,7 +241,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 88,
                   "startColumn": 23,
@@ -266,7 +266,7 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 111,
                   "startColumn": 23,
@@ -279,7 +279,7 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionPipelineBehaviorTest.cs",
                 "region": {
                   "startLine": 111,
                   "startColumn": 23,
@@ -304,11 +304,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 144,
+                  "startLine": 109,
                   "startColumn": 23,
-                  "endLine": 144,
+                  "endLine": 109,
                   "endColumn": 26
                 }
               }
@@ -317,12 +317,12 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 144,
+                  "startLine": 109,
                   "startColumn": 23,
-                  "endLine": 148,
-                  "endColumn": 10
+                  "endLine": 109,
+                  "endColumn": 109
                 }
               }
             }
@@ -342,11 +342,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 109,
+                  "startLine": 144,
                   "startColumn": 23,
-                  "endLine": 109,
+                  "endLine": 144,
                   "endColumn": 26
                 }
               }
@@ -355,12 +355,12 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///D:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
+                "uri": "file:///d:/GitHub/AdaskoTheBeAsT.FluentValidation.MediatR/test/unit/AdaskoTheBeAsT.FluentValidation.MediatR.Test/FluentValidationCollectionStreamPipelineBehaviorTest.cs",
                 "region": {
-                  "startLine": 109,
+                  "startLine": 144,
                   "startColumn": 23,
-                  "endLine": 109,
-                  "endColumn": 109
+                  "endLine": 148,
+                  "endColumn": 10
                 }
               }
             }
