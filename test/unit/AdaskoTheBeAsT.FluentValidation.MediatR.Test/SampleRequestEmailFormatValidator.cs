@@ -1,3 +1,4 @@
+using System;
 using FluentValidation;
 
 namespace AdaskoTheBeAsT.FluentValidation.MediatR.Test;
@@ -8,7 +9,9 @@ public class SampleRequestEmailFormatValidator
 {
     public SampleRequestEmailFormatValidator()
     {
-        RuleFor(s => s.Email).Must(e => e != null && e.Contains("@")).WithMessage("'Email' must contain '@' symbol.");
+        RuleFor(s => s.Email)
+            .Must(e => e?.Contains('@', StringComparison.Ordinal) == true)
+            .WithMessage("'Email' must contain '@' symbol.");
     }
 }
 #pragma warning restore CA1710 // Identifiers should have correct suffix

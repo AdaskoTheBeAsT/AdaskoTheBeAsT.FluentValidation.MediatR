@@ -45,7 +45,7 @@ public class FluentValidationCollectionPipelineBehavior<TRequest, TResponse>
             .Where(f => f != null)
             .ToList();
 
-        if (failures?.Count > 0)
+        if (failures.Count > 0)
         {
             throw new ValidationException(failures);
         }

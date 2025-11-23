@@ -136,19 +136,27 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
     public async Task ShouldReturnAllErrorsWhenMultipleValidatorsForMultiplePropertiesAsync()
     {
         // Arrange
-        _validators = new List<IValidator<SampleRequest>>
-        {
-            new SampleRequestIdGreaterThanZeroValidator(),
-            new SampleRequestIdLessThanMaxValidator(),
-            new SampleRequestNameNonEmptyValidator(),
-            new SampleRequestNameMaxLengthValidator(),
-            new SampleRequestEmailNotEmptyValidator(),
-            new SampleRequestEmailFormatValidator(),
-        };
+#pragma warning disable SA1003 // Symbols should be spaced correctly
+        _validators =
+            (List<IValidator<SampleRequest>>)
+            [
+                new SampleRequestIdGreaterThanZeroValidator(),
+                new SampleRequestIdLessThanMaxValidator(),
+                new SampleRequestNameNonEmptyValidator(),
+                new SampleRequestNameMaxLengthValidator(),
+                new SampleRequestEmailNotEmptyValidator(),
+                new SampleRequestEmailFormatValidator()
+            ];
+#pragma warning restore SA1003 // Symbols should be spaced correctly
+
         _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
         var request = new SampleRequest();
         var cancellationToken = CancellationToken.None;
-        static Task<SampleResponse> NextAsync(CancellationToken cancellationToken = default) => Task.FromResult(new SampleResponse { Result = "ok" });
+        static Task<SampleResponse> NextAsync(CancellationToken cancellationToken = default)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            return Task.FromResult(new SampleResponse { Result = "ok" });
+        }
 
         // Act
         Func<Task> func = async () => await _sut.Handle(
