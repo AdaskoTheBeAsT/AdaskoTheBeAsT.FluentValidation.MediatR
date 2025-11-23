@@ -145,7 +145,7 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
                 new SampleRequestNameNonEmptyValidator(),
                 new SampleRequestNameMaxLengthValidator(),
                 new SampleRequestEmailNotEmptyValidator(),
-                new SampleRequestEmailFormatValidator()
+                new SampleRequestEmailFormatValidator(),
             ];
 #pragma warning restore SA1003 // Symbols should be spaced correctly
 
