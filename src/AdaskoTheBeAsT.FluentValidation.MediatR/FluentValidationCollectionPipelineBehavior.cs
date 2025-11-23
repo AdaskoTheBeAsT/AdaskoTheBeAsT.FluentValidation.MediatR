@@ -34,9 +34,9 @@ public class FluentValidationCollectionPipelineBehavior<TRequest, TResponse>
         RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
-        var context = new ValidationContext<TRequest>(request);
+        // Each validator gets its own ValidationContext to avoid state sharing
         var validationResultTasks = _validators
-            .Select(async v => await v.ValidateAsync(context, cancellationToken).ConfigureAwait(false));
+            .Select(async v => await v.ValidateAsync(new ValidationContext<TRequest>(request), cancellationToken).ConfigureAwait(false));
 
         var validationResults = await Task.WhenAll(validationResultTasks).ConfigureAwait(false);
 

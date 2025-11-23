@@ -10,4 +10,7 @@ public class SampleRequest
 
     // ReSharper disable once UnusedAutoPropertyAccessor.Global
     public string? Name { get; set; }
+
+    // ReSharper disable once UnusedAutoPropertyAccessor.Global
+    public string? Email { get; set; }
 }

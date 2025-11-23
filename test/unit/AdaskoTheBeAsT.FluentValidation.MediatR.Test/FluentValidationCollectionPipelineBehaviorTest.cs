@@ -131,4 +131,36 @@ public sealed class FluentValidationCollectionPipelineBehaviorTest
             exception.Errors.Should().HaveCount(2);
         }
     }
+
+    [Fact]
+    public async Task ShouldReturnAllErrorsWhenMultipleValidatorsForMultiplePropertiesAsync()
+    {
+        // Arrange
+        _validators = new List<IValidator<SampleRequest>>
+        {
+            new SampleRequestIdGreaterThanZeroValidator(),
+            new SampleRequestIdLessThanMaxValidator(),
+            new SampleRequestNameNonEmptyValidator(),
+            new SampleRequestNameMaxLengthValidator(),
+            new SampleRequestEmailNotEmptyValidator(),
+            new SampleRequestEmailFormatValidator(),
+        };
+        _sut = new FluentValidationCollectionPipelineBehavior<SampleRequest, SampleResponse>(_validators);
+        var request = new SampleRequest();
+        var cancellationToken = CancellationToken.None;
+        static Task<SampleResponse> NextAsync(CancellationToken cancellationToken = default) => Task.FromResult(new SampleResponse { Result = "ok" });
+
+        // Act
+        Func<Task> func = async () => await _sut.Handle(
+            request,
+            NextAsync,
+            cancellationToken);
+
+        // Assert
+        using (new AssertionScope())
+        {
+            var exception = (await func.Should().ThrowAsync<ValidationException>()).Which;
+            exception.Errors.Should().HaveCount(6);
+        }
+    }
 }
