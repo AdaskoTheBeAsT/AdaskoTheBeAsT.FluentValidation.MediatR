@@ -354,3 +354,7 @@ MigrationBackup/
 
 .sarif/*
 !.sarif/.gitkeep
+
+# Local secrets consumed by test runs (MEDIATR_LICENSE_KEY etc.)
+.env
+!.env.example

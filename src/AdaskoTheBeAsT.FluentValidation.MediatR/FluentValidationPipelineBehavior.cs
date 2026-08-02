@@ -47,7 +47,7 @@ public class FluentValidationPipelineBehavior<TRequest, TResponse>
         }
 
 #pragma warning disable CC0031 // Check for null before calling a delegate
-        return await next().ConfigureAwait(false);
+        return await next(cancellationToken).ConfigureAwait(false);
 #pragma warning restore CC0031 // Check for null before calling a delegate
     }
 }
