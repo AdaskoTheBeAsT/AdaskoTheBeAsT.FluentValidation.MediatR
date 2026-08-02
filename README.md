@@ -39,7 +39,7 @@ dotnet add package AdaskoTheBeAsT.FluentValidation.MediatR
 - .NET 8.0
 
 **Dependencies:**
-- MediatR 13.1.0+
+- MediatR 14.2.0+
 - FluentValidation 12.1.0+
 
 ---
@@ -450,6 +450,39 @@ public void Should_Have_Error_When_Username_Is_Empty()
     Assert.Contains(result.Errors, e => e.PropertyName == nameof(CreateUserCommand.Username));
 }
 ```
+
+---
+
+## 🧪 Running Tests Locally
+
+```bash
+dotnet test
+```
+
+The test suite needs a MediatR license key. MediatR resolves it from the environment
+(`MEDIATR_LICENSE_KEY`, then the shared `LUCKYPENNY_LICENSE_KEY`) unless a key is passed explicitly
+via `WithLicenseKey(...)`. In CI the value comes from the `MEDIATR_LICENSE_KEY` GitHub secret
+(see `.github/workflows/ci.yml`).
+
+To supply it locally, copy the template and fill in your key:
+
+```bash
+cp .env.example .env
+```
+
+```dotenv
+MEDIATR_LICENSE_KEY=your-license-key
+```
+
+`.env` is git ignored, so the key never lands in the repository. A module initializer in the test
+project (`TestEnvironment`) uses [dotenv.net](https://github.com/bolorundurowb/dotenv.net) to probe
+upwards from the test output directory for the nearest `.env` and exports every `KEY=VALUE` entry
+into the test process before the first mediator is resolved. Variables that are already set in the
+environment are never overwritten, so CI values always win over the file.
+
+This works the same for `dotnet test` and for the test runners in Visual Studio, Rider, and VS Code.
+If you prefer not to keep a file in the working tree, set a user-level environment variable instead
+(`setx MEDIATR_LICENSE_KEY "your-license-key"` on Windows) and restart your IDE or shell.
 
 ---
 
